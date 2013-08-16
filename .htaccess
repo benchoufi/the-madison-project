@@ -40,10 +40,10 @@ RewriteCond %{QUERY_STRING} ^(.*)?$
 RewriteRule ^(suggestion|comment)/([0-9]+)(/)?	index.php?action=view&type=note&page=open&note_type=$1&note=$2&%1 [L]
 
 RewriteCond %{QUERY_STRING} ^(.*)?$
-RewriteRule ^([0-9A-Za-z\-_]+)/(suggestion|comment)/([0-9]+)(/)?	index.php?action=view&type=note&page=$1&note_type=$2&note=$3&%1 [L]
+RewriteRule ^([\ \w-]+)/(suggestion|comment)/([0-9]+)(/)?	index.php?action=view&type=note&page=$1&note_type=$2&note=$3&%1 [L]
 
 #Catch All Pages
 RewriteRule ^index\.php$ - [L]
 
 RewriteCond %{QUERY_STRING} ^(.*)?$
-RewriteRule ^([0-9A-Za-z\-_]+)(/)?			index.php?action=view&type=page&page=$1&%1 [L]
+RewriteRule ^([\ \w-]+)/?			index.php?action=view&type=page&page=$1&%1 [L]
